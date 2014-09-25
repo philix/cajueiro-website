@@ -1,5 +1,8 @@
+*.DS_Store
+*.swp
+*.swo
+
 /bower_components/*
 /js/libs/*
 /.sass-cache/*
-*.DS_Store
 /stylesheets/*
