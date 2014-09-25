@@ -1,4 +1,4 @@
-define(['react'], function(React) {
+define(['react', 'jsx!jsx/Row'], function(React, Row) {
   var Field = React.createClass({
     fieldProps: {
       kids: {label: "Crianças", tabIndex: 1, help: "Menores de 12 anos", price: 8},
@@ -37,28 +37,31 @@ define(['react'], function(React) {
       }
 
       return (
-        <div className="form-group">
-          <div className="col-xs-12">
-            <label className="control-label" htmlFor={name}>{data.label}</label>
-          </div>
+        <form>
+          <Row>
+            <div className="small-12 columns">
+              <label className="control-label" htmlFor={name}>{data.label}</label>
+            </div>
+            <Row className="collapse">
+              <div className="small-8 columns">
+                <input className="form-control input-sm" type="text" tabIndex={data.tabIndex}
+                  name={name} value={value} onChange={onChange} />
+              </div>
+              <div className="small-2 columns">
+                <a className="button postfix" onClick={increment}>&#43;</a>
+              </div>
+              <div className="small-2 columns">
+                <a className="button postfix" onClick={decrement}>&minus;</a>
+              </div>
+            </Row>
+          </Row>
 
-          <div className="col-xs-8">
-            <input className="form-control input-sm" type="text" tabIndex={data.tabIndex}
-              name={name} value={value} onChange={onChange} />
-          </div>
-          <div className="incdec-buttons col-xs-4">
-            <button type="button" className="btn btn-default btn-sm" onClick={increment}>
-              <span className="glyphicon glyphicon-plus"></span>
-            </button>
-            <button type="button" className="btn btn-default btn-sm" onClick={decrement}>
-              <span className="glyphicon glyphicon-minus"></span>
-            </button>
-          </div>
-
-          <div className="col-xs-12">
-            <p className="help-block">{data.help}{subTotal}</p>
-          </div>
-        </div>
+          <Row>
+            <div className="small-12 columns">
+              <p className="help-block">{data.help}{subTotal}</p>
+            </div>
+          </Row>
+        </form>
       );
     }
   });
@@ -83,10 +86,10 @@ define(['react'], function(React) {
           <Field name="kids" value={that.state.kids} onChange={onChange} />
           <Field name="adults" value={that.state.adults} onChange={onChange} />
           <Field name="olds" value={that.state.olds} onChange={onChange} />
-          <div>
-            <div id="calculator-total-label" className="col-xs-4">Total</div>
-            <div id="calculator-total" className="col-xs-8">R$ {cost}</div>
-          </div>
+          <Row>
+            <div id="calculator-total-label" className="small-4 columns">Total</div>
+            <div id="calculator-total" className="small-8 columns">R$ {cost}</div>
+          </Row>
         </div>
       );
     }
