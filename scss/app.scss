@@ -51,6 +51,10 @@ body {
 	background-color: white;
 	padding-bottom: 60px;
 }
+#js-backstretch-container {
+	display: block;
+	min-height: 800px;
+}
 #backstretch {
 	position: relative;
 	overflow: hidden;
@@ -60,7 +64,6 @@ body {
 	position: absolute;
 	max-width: none;
 	max-height: none;
-	min-height: 200px;
 }
 // }}}2
 
