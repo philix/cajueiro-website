@@ -1,5 +1,8 @@
+// vim: set fdm=marker fdl=1 fdc=3
+
 @import "settings";
 @import "foundation";
+@import "compass/css3";
 
 // Or selectively include components
 // @import
@@ -38,3 +41,50 @@
 //   "foundation/components/type",
 //   "foundation/components/offcanvas",
 //   "foundation/components/visibility";
+
+
+// Body styles {{{2
+body {
+  padding-bottom: $footer-height;
+}
+#content {
+	background-color: white;
+	padding-bottom: 60px;
+}
+#backstretch {
+	position: relative;
+	overflow: hidden;
+	max-height: 900px;
+}
+#backstretch > img {
+	position: absolute;
+	max-width: none;
+	max-height: none;
+	min-height: 200px;
+}
+// }}}2
+
+// Sticky footer styles {{{3
+#footer {
+  position: fixed;
+  bottom: 0;
+	width: 100%;
+	height: $footer-height;
+	@include box-shadow(black 2px 2px 5px);
+	background-color: rgba(0,0,0,0.8);
+}
+// }}}3
+
+// Calculator {{{4
+#calculator {
+  background-color: $calculator-bg-color;
+	margin: 10px;
+}
+#calculator-total, #calculator-total-label {
+  font-family: $serif-font-stack;
+  font-size: 1.4em;
+}
+#calculator-total {
+  font-style: italic;
+}
+// }}}4

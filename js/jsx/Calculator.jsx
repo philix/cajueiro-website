@@ -82,14 +82,18 @@ define(['react', 'jsx!jsx/Row'], function(React, Row) {
       var cost = (this.state.kids + this.state.olds) * 8 + this.state.adults * 15;
 
       return (
-        <div id="calculator" className="dark-bg shadow">
-          <Field name="kids" value={that.state.kids} onChange={onChange} />
-          <Field name="adults" value={that.state.adults} onChange={onChange} />
-          <Field name="olds" value={that.state.olds} onChange={onChange} />
-          <Row>
-            <div id="calculator-total-label" className="small-4 columns">Total</div>
-            <div id="calculator-total" className="small-8 columns">R$ {cost}</div>
-          </Row>
+        <div id="calculator">
+          <div className="row">
+            <div className="small-12 column">
+              <Field name="kids" value={that.state.kids} onChange={onChange} />
+              <Field name="adults" value={that.state.adults} onChange={onChange} />
+              <Field name="olds" value={that.state.olds} onChange={onChange} />
+              <Row>
+                <div id="calculator-total-label" className="small-4 column">Total</div>
+                <div id="calculator-total" className="small-8 column">R$ {cost}</div>
+              </Row>
+            </div>
+          </div>
         </div>
       );
     }
