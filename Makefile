@@ -7,4 +7,7 @@ install-js-deps:
 watch:
 	compass watch
 
+build:
+	node r.js -o build.js
+
 .PHONY: watch
