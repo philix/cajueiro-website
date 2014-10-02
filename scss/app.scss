@@ -48,40 +48,41 @@ body {
   padding-bottom: $footer-height;
 }
 #content {
-	background-color: white;
-	padding-bottom: 60px;
+  background-color: white;
+  padding-bottom: 60px;
 }
 #js-backstretch-container {
-	display: block;
-	min-height: 100px;
+  display: block;
+  min-height: 100px;
 }
 #backstretch {
-	position: relative;
-	overflow: hidden;
-	max-height: 900px;
+  position: relative;
+  overflow: hidden;
+  max-height: 900px;
 }
 #backstretch > img {
-	position: absolute;
-	max-width: none;
-	max-height: none;
+  position: absolute;
+  max-width: none;
+  max-height: none;
 }
 // }}}2
 
 // Sticky footer styles {{{3
 #footer {
   position: fixed;
+  z-index: 10;
   bottom: 0;
-	width: 100%;
-	height: $footer-height;
-	@include box-shadow(black 2px 2px 5px);
-	background-color: rgba(0,0,0,0.8);
+  width: 100%;
+  height: $footer-height;
+  @include box-shadow(black 2px 2px 5px);
+  background-color: rgba(0,0,0,0.8);
 }
 // }}}3
 
 // Calculator {{{4
 #calculator {
   background-color: $calculator-bg-color;
-	margin: 10px;
+  margin: 10px;
 }
 #calculator-total, #calculator-total-label {
   font-family: $serif-font-stack;
