@@ -23,9 +23,31 @@ require.config({
 });
 
 var backstretchImages = [
-  '/uploads/backstretch/elefante.jpg',
-  '/uploads/backstretch/show.jpg',
-  '/uploads/backstretch/piscina_fundo.jpg'
+  {
+    src: '/uploads/backstretch/piscina_fundo_kids.jpg',
+    width: 1600,
+    height: 900
+  },
+  {
+    src: '/uploads/backstretch/piscina_fundo.jpg',
+    width: 960,
+    height: 540
+  },
+  {
+    src: '/uploads/backstretch/show.jpg',
+    width: 1600,
+    height: 960
+  },
+  {
+    src: '/uploads/backstretch/elefante.jpg',
+    width: 1600,
+    height: 900
+  },
+  {
+    src: '/uploads/backstretch/overview.jpg',
+    width: 960,
+    height: 637
+  }
 ];
 
 require(['jquery',
@@ -42,5 +64,10 @@ require(['jquery',
   var calcContainer = document.getElementById("js-calc-container");
   if (calcContainer) {
     React.renderComponent(Calculator(), calcContainer);
+  }
+
+  var bsContainer = document.getElementById("js-backstretch-container");
+  if (bsContainer) {
+    React.renderComponent(BackStretch({images: backstretchImages}), bsContainer);
   }
 });
