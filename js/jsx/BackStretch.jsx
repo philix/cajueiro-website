@@ -6,14 +6,12 @@ define(['react'], function(React) {
     var boundingRatio = boundingWidth / boundingHeight;
 
     if (ratio < boundingRatio) {
-      console.log("<");
       factor = boundingWidth / w;
       newWidth = boundingWidth;
       newHeight = Math.floor(h * factor);
       left = 0;
       top = -Math.abs(newHeight - boundingHeight) / 2;
     } else {
-      console.log(">");
       factor = boundingHeight / h;
       newWidth = Math.floor(w * factor);
       newHeight = boundingHeight;
@@ -35,28 +33,47 @@ define(['react'], function(React) {
       this.setState({width: $win.width(), height: $win.height()});
     },
 
+    getNextImageIndex: function() {
+      return (this.state.currentImage + 1) % this.props.images.length;
+    },
+
+    preloadNextImage: function() {
+      var nextImage = this.getNextImageIndex();
+      console.log("Preloading " + nextImage);
+      var img = document.createElement('img');
+      img.src = this.props.images[nextImage].src;
+    },
+
     componentWillMount: function() {
       this.updateDimensions();
     },
 
     componentDidMount: function() {
       window.addEventListener("resize", this.updateDimensions);
+
+      this.preloadNextImage();
+
+      var that = this;
+      var refresh = function() {
+        that.setState({currentImage: that.getNextImageIndex()});
+        that.preloadNextImage();
+      };
+      this.interval = setInterval(refresh, 4000);
     },
 
     componentWillUnmount: function() {
       window.removeEventListener("resize", this.updateDimensions);
+      clearInterval(this.interval);
     },
 
     render: function() {
-      var currentImage = this.state.currentImage % this.props.images.length;
-      var img = this.props.images[currentImage];
+      console.log("Rendering " + this.state.currentImage);
+      var img = this.props.images[this.state.currentImage];
 
       var boundingHeight = Math.min(this.state.height - 45, 900);
       var boundingWidth = this.state.width;
 
       var imageStyle = expandAndPosition(img.width, img.height, boundingWidth, boundingHeight);
-
-      console.log(imageStyle);
 
       return (
         <div id="backstretch" style={{height: boundingHeight}}>
