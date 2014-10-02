@@ -78,7 +78,7 @@ define(['react'], function(React) {
       return (
         <div id="backstretch" style={{height: boundingHeight}}>
           <div id="overlay">
-            <img src="/imgs/overlay.png" width="367" height="200"/>
+            <img src="/imgs/overlay.png" width="373" height="220"/>
           </div>
           <img src={img.src} width={img.width} height={img.height} style={imageStyle} />
         </div>
