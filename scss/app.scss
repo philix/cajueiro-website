@@ -55,7 +55,7 @@ h1 > a {
 }
 #js-backstretch-container {
   display: block;
-  min-height: 100px;
+  min-height: $overlay-height;
 }
 #backstretch {
   position: relative;
@@ -63,9 +63,24 @@ h1 > a {
   max-height: 900px;
 }
 #backstretch > img {
+  z-index: -999;
   position: absolute;
   max-width: none;
   max-height: none;
+}
+#overlay {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -99;
+  width: 100%;
+  height: $overlay-height + $overlay-margin;
+  text-align: center;
+}
+#overlay > img {
+  margin-top: $overlay-margin;
+  padding: 0 10px;
 }
 // }}}2
 
