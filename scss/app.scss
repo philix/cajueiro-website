@@ -1,23 +1,22 @@
 // vim: set fdm=marker fdl=1 fdc=3
 
 @import "settings";
-@import "foundation";
 @import "compass/css3";
 
-// Or selectively include components
-// @import
+// Selectively include components
+@import
 //   "foundation/components/accordion",
 //   "foundation/components/alert-boxes",
-//   "foundation/components/block-grid",
+   "foundation/components/block-grid",
 //   "foundation/components/breadcrumbs",
-//   "foundation/components/button-groups",
-//   "foundation/components/buttons",
-//   "foundation/components/clearing",
-//   "foundation/components/dropdown",
-//   "foundation/components/dropdown-buttons",
+   "foundation/components/button-groups",
+   "foundation/components/buttons",
+   "foundation/components/clearing",
+   "foundation/components/dropdown",
+   "foundation/components/dropdown-buttons",
 //   "foundation/components/flex-video",
-//   "foundation/components/forms",
-//   "foundation/components/grid",
+   "foundation/components/forms",
+   "foundation/components/grid",
 //   "foundation/components/inline-lists",
 //   "foundation/components/joyride",
 //   "foundation/components/keystrokes",
@@ -29,18 +28,18 @@
 //   "foundation/components/pricing-tables",
 //   "foundation/components/progress-bars",
 //   "foundation/components/reveal",
-//   "foundation/components/side-nav",
-//   "foundation/components/split-buttons",
-//   "foundation/components/sub-nav",
+   "foundation/components/side-nav",
+   "foundation/components/split-buttons",
+   "foundation/components/sub-nav",
 //   "foundation/components/switches",
 //   "foundation/components/tables",
-//   "foundation/components/tabs",
-//   "foundation/components/thumbs",
+   "foundation/components/tabs",
+   "foundation/components/thumbs",
 //   "foundation/components/tooltips",
-//   "foundation/components/top-bar",
-//   "foundation/components/type",
+   "foundation/components/top-bar",
+   "foundation/components/type",
 //   "foundation/components/offcanvas",
-//   "foundation/components/visibility";
+   "foundation/components/visibility";
 
 
 // Body styles {{{2
@@ -50,6 +49,9 @@ body {
 #content {
   background-color: white;
   padding-bottom: 60px;
+}
+h1 > a {
+  height: 45px;
 }
 #js-backstretch-container {
   display: block;
@@ -74,8 +76,8 @@ body {
   bottom: 0;
   width: 100%;
   height: $footer-height;
-  @include box-shadow(black 2px 2px 5px);
-  background-color: rgba(0,0,0,0.8);
+  @include box-shadow($footer-bg-color 2px 2px 5px);
+  background-color: $footer-bg-color;
 }
 // }}}3
 
