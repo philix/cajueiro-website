@@ -39,25 +39,25 @@ define(['react', 'jsx!jsx/Row'], function(React, Row) {
       return (
         <form>
           <Row>
-            <div className="small-12 columns">
+            <div className="small-12 column">
               <label className="control-label" htmlFor={name}>{data.label}</label>
             </div>
             <Row className="collapse">
-              <div className="small-8 columns">
+              <div className="small-8 column">
                 <input className="form-control input-sm" type="text" tabIndex={data.tabIndex}
                   name={name} value={value} onChange={onChange} />
               </div>
-              <div className="small-2 columns">
+              <div className="small-2 column">
                 <a className="button postfix" onClick={increment}>&#43;</a>
               </div>
-              <div className="small-2 columns">
+              <div className="small-2 column">
                 <a className="button postfix" onClick={decrement}>&minus;</a>
               </div>
             </Row>
           </Row>
 
           <Row>
-            <div className="small-12 columns">
+            <div className="small-12 column">
               <p className="help-block">{data.help}{subTotal}</p>
             </div>
           </Row>

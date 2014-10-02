@@ -41,7 +41,6 @@ require(['jquery',
   // Setup the Calculator
   var calcContainer = document.getElementById("js-calc-container");
   if (calcContainer) {
-    // Mount the JSX component in the app container
     React.renderComponent(Calculator(), calcContainer);
   }
 });
