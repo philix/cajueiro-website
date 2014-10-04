@@ -54,8 +54,9 @@ require(['jquery',
          'react',
          'jsx!jsx/Calculator',
          'jsx!jsx/BackStretch',
+         'jsx!jsx/Weather',
          'libs/foundation/js/foundation'],
-        function($, React, Calculator, BackStretch) {
+        function($, React, Calculator, BackStretch, Weather) {
 
   // Foundation JavaScript
   $(document).foundation();
@@ -69,5 +70,14 @@ require(['jquery',
   var bsContainer = document.getElementById("js-backstretch-container");
   if (bsContainer) {
     React.renderComponent(BackStretch({images: backstretchImages}), bsContainer);
+  }
+
+  var weatherContainer = document.getElementById("js-weather-container");
+  if (weatherContainer) {
+    var weatherUrl = "http://api.openweathermap.org/data/2.5/forecast?lat=-10.647222&lon=-37.373472&units=metric&lang=pt&cnt=3";
+    $.getJSON(weatherUrl, function (data) {
+      console.log(data);
+      React.renderComponent(Weather({data: data}), weatherContainer);
+    });
   }
 });

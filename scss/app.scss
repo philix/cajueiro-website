@@ -49,6 +49,7 @@ body {
 #content {
   background-color: white;
   padding-bottom: 60px;
+  margin-top: 10px;
 }
 h1 > a {
   height: 45px;
@@ -116,7 +117,70 @@ h1 > a {
 }
 // }}}3
 
-// Calculator {{{4
+// Weather {{{4
+.weather-wrap {
+  text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.9);
+  color: white;
+  font-family: "Open Sans", Tahoma, sans-serif;
+  line-height: 14px;
+}
+.weather-cover {
+  background: url('/imgs/weather_bg.jpg') repeat 0 0;
+}
+.weather-darken {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+.weather-header {
+  background-color: rgba(0, 0, 0, 0.2);
+  padding: 10px;
+  text-align: center;
+  text-transform: uppercase;
+  width: 100%;
+}
+.weather-current-temp {
+  padding: 10px 5%;
+  font-size: 66px;
+  line-height: 1em;
+  font-weight: 300;
+  text-align: center;
+}
+.weather-current-temp > sup {
+  font-size: 24px;
+  top: 1.8em;
+  padding-left: 3px;
+  position: absolute;
+}
+.weather-todays-stats {
+  text-align: right;
+  padding: 14px 5%;
+  line-height: 1.4em;
+}
+.weather-forecast {
+  margin: 0 5%;
+  border-top: 1px solid rgba(255, 255, 255, 0.5);
+}
+.weather-forecast-day {
+  padding: 20px 5% 15px;
+  text-align: center;
+  font-weight: 400;
+}
+.weather-forecast-day-temp {
+  font-size: 1.8em;
+  font-weight: 400;
+}
+.weather-forecast-day-temp > sup {
+  font-size: 0.6em;
+  padding-left: 2px;
+  position: absolute;
+}
+.weather-forecast-day-abbr {
+  text-transform: uppercase;
+  font-size: 0.8em;
+  margin-top: 10px;
+}
+// }}}4
+
+// Calculator {{{5
 #calculator {
   background-color: $calculator-bg-color;
   margin: 10px;
@@ -128,4 +192,4 @@ h1 > a {
 #calculator-total {
   font-style: italic;
 }
-// }}}4
+// }}}5
