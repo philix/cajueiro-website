@@ -1,5 +1,17 @@
 // vim: set fdm=marker fdl=1 fdc=3
 
+// first for IE 4–8
+@font-face {
+  font-family: FertigoPRO;
+  src: url("/fonts/Fertigo_PROWeb.eot");
+}
+
+// then for WOFF-capable browsers
+@font-face {
+  font-family: FertigoPRO;
+  src: url("/fonts/Fertigo_PROWeb.woff") format("woff");
+}
+
 @import "settings";
 @import "compass/css3";
 
@@ -186,7 +198,7 @@ h1 > a {
   margin: 10px;
 }
 #calculator-total, #calculator-total-label {
-  font-family: $serif-font-stack;
+  font-family: $font-family-serif;
   font-size: 1.4em;
 }
 #calculator-total {
