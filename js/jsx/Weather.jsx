@@ -16,10 +16,10 @@ define(['react', 'jsx!jsx/Row'], function(React, Row) {
       var list = this.props.data.list;
       var now = list[0];
       var temp = Math.round(now.main.temp);
-      var tempMax = now.main.temp_max;
-      var tempMin = now.main.temp_min;
+      var tempMax = Math.round(now.main.temp_max);
+      var tempMin = Math.round(now.main.temp_min);
       var humidity = now.main.humidity;
-      var wind = now.wind.speed;
+      var wind = Math.round(now.wind.speed);
       var desc = now.weather[0].description;
 
       var today = getDayCountFromTime(Date.now());
@@ -60,7 +60,7 @@ define(['react', 'jsx!jsx/Row'], function(React, Row) {
                   <div className="weather-todays-stats">
                     <div>{desc}</div>
                     <div>umidade: {humidity}%</div>
-                    <div>vento: {wind}Kmh</div>
+                    <div>vento: {wind} Kmh</div>
                     <div>Máx {tempMax} • Mín {tempMin}</div>
                   </div>
                 </div>
