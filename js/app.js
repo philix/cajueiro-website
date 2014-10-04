@@ -22,33 +22,89 @@ require.config({
   }
 });
 
-var backstretchImages = [
-  {
-    src: '/uploads/backstretch/piscina_fundo_kids.jpg',
-    width: 1600,
-    height: 900
-  },
-  {
-    src: '/uploads/backstretch/piscina_fundo.jpg',
-    width: 960,
-    height: 540
-  },
-  {
-    src: '/uploads/backstretch/show.jpg',
-    width: 1600,
-    height: 960
-  },
-  {
-    src: '/uploads/backstretch/elefante.jpg',
-    width: 1600,
-    height: 900
-  },
-  {
-    src: '/uploads/backstretch/overview.jpg',
-    width: 960,
-    height: 637
-  }
-];
+var backstretchImageSets = {
+  large: [
+    {
+      src: '/uploads/backstretch/elefante_large.jpg',
+      width: 1600,
+      height: 900
+    },
+    {
+      src: '/uploads/backstretch/piscina_fundo.jpg',
+      width: 960,
+      height: 540
+    },
+    {
+      src: '/uploads/backstretch/piscina_fundo_kids_large.jpg',
+      width: 1600,
+      height: 900
+    },
+    {
+      src: '/uploads/backstretch/show_large.jpg',
+      width: 1600,
+      height: 960
+    },
+    {
+      src: '/uploads/backstretch/overview.jpg',
+      width: 960,
+      height: 637
+    }
+  ],
+  medium: [
+    {
+      src: '/uploads/backstretch/elefante_medium.jpg',
+      width: 1024,
+      height: 576
+    },
+    {
+      src: '/uploads/backstretch/piscina_fundo.jpg',
+      width: 960,
+      height: 540
+    },
+    {
+      src: '/uploads/backstretch/piscina_fundo_kids_medium.jpg',
+      width: 1024,
+      height: 576
+    },
+    {
+      src: '/uploads/backstretch/show_medium.jpg',
+      width: 1024,
+      height: 614
+    },
+    {
+      src: '/uploads/backstretch/overview.jpg',
+      width: 960,
+      height: 637
+    }
+  ],
+  small: [
+    {
+      src: '/uploads/backstretch/elefante_small.jpg',
+      width: 640,
+      height: 420
+    },
+    {
+      src: '/uploads/backstretch/piscina_fundo_small.jpg',
+      width: 640,
+      height: 360
+    },
+    {
+      src: '/uploads/backstretch/piscina_fundo_kids_small.jpg',
+      width: 640,
+      height: 488
+    },
+    {
+      src: '/uploads/backstretch/show_small.jpg',
+      width: 1600,
+      height: 960
+    },
+    {
+      src: '/uploads/backstretch/overview_small.jpg',
+      width: 640,
+      height: 425
+    }
+  ]
+};
 
 require(['jquery',
          'react',
@@ -69,7 +125,14 @@ require(['jquery',
 
   var bsContainer = document.getElementById("js-backstretch-container");
   if (bsContainer) {
-    React.renderComponent(BackStretch({images: backstretchImages}), bsContainer);
+    var width = $(window).width();
+    var sizeGroup = 'small';
+    if (width > 1024) {
+      sizeGroup = 'large';
+    } else if (width > 640) {
+      sizeGroup = 'medium';
+    }
+    React.renderComponent(BackStretch({images: backstretchImageSets[sizeGroup]}), bsContainer);
   }
 
   var weatherContainer = document.getElementById("js-weather-container");
