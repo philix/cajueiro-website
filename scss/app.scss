@@ -94,6 +94,26 @@ h1 > a {
   @include box-shadow($footer-bg-color 2px 2px 5px);
   background-color: $footer-bg-color;
 }
+.social-button {
+  background: transparent url('/imgs/social.png') no-repeat;
+  margin-top: 5px;
+  height: 50px;
+  width: 50px;
+  display: inline-block;
+}
+.social-button-fb {
+  background-position: left -110px;
+}
+.social-button-instagram {
+  background-position: left -53px;
+}
+.social-button-email {
+  background-position: left -162px;
+}
+.raw-contact-info {
+  color: white;
+  text-align: right;
+}
 // }}}3
 
 // Calculator {{{4
