@@ -8,6 +8,6 @@ watch:
 	compass watch
 
 build:
-	node r.js -o build.js
+	node js/jsx-requirejs-plugin/r.js -o build.js
 
-.PHONY: watch
+.PHONY: install-js-deps watch build
