@@ -11,7 +11,9 @@ build:
 	compass compile
 	node js/jsx-requirejs-plugin/r.js -o build.js
 
-deploy: build
+rsync-deploy:
 	rsync -av ~/code/balneario/ felipe@balneariocajueiro.com.br:/home/felipe/balneario
 
-.PHONY: install-js-deps watch build deploy
+deploy: build rsync-deploy
+
+.PHONY: install-js-deps watch build rsync-deploy deploy
