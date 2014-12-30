@@ -22,89 +22,141 @@ require.config({
   }
 });
 
-var backstretchImageSets = {
-  large: [
-    {
-      src: '/uploads/backstretch/elefante_large.jpg',
+function buildImageSets(data) {
+  var ret = {
+    large: [],
+    medium: [],
+    small: []
+  };
+
+  var useImage = function(img, key) {
+    if (img[key]) {
+      img[key].src = '/uploads/backstretch/' + img[key].src;
+      ret[key].push(img[key]);
+    }
+  };
+
+  for (var i = 0; i < data.length; i += 1) {
+    var img = data[i];
+    useImage(img, 'large');
+    useImage(img, 'medium');
+    useImage(img, 'small');
+  }
+
+  return ret;
+}
+
+var backstretchImageSets = buildImageSets([
+  // aerea
+  {
+    large: {
+      src: 'aerea_large.jpg',
+      width: 1600,
+      height: 1066
+    },
+    medium: {
+      src: 'area_medium.jpg',
+      width: 1024,
+      height: 862
+    },
+    small: {
+      src: 'aerea_medium.jpg', // the small image has really bad quality
+      width: 1024,
+      height: 862
+    }
+  },
+  // elefante
+  {
+    large: {
+      src: 'elefante_large.jpg',
       width: 1600,
       height: 900
     },
-    {
-      src: '/uploads/backstretch/piscina_fundo.jpg',
+    medium: {
+      src: 'elefante_medium.jpg',
+      width: 1024,
+      height: 576
+    },
+    small: {
+      src: 'elefante_small.jpg',
+      width: 640,
+      height: 420
+    }
+  },
+  // piscina_fundo
+  {
+    large: {
+      src: 'piscina_fundo.jpg',
       width: 960,
       height: 540
     },
-    {
-      src: '/uploads/backstretch/piscina_fundo_kids_large.jpg',
+    medium: {
+      src: 'piscina_fundo.jpg',
+      width: 960,
+      height: 540
+    },
+    small: {
+      src: 'piscina_fundo_small.jpg',
+      width: 640,
+      height: 360
+    }
+  },
+  // piscina_fundo_kids
+  {
+    large: {
+      src: 'piscina_fundo_kids_large.jpg',
       width: 1600,
       height: 900
     },
-    {
-      src: '/uploads/backstretch/show_large.jpg',
+    medium: {
+      src: 'piscina_fundo_kids_medium.jpg',
+      width: 1024,
+      height: 576
+    },
+    small: {
+      src: 'piscina_fundo_kids_small.jpg',
+      width: 640,
+      height: 488
+    }
+  },
+  // show
+  {
+    large: {
+      src: 'show_large.jpg',
       width: 1600,
       height: 960
     },
-    {
-      src: '/uploads/backstretch/overview.jpg',
-      width: 960,
-      height: 637
-    }
-  ],
-  medium: [
-    {
-      src: '/uploads/backstretch/elefante_medium.jpg',
-      width: 1024,
-      height: 576
-    },
-    {
-      src: '/uploads/backstretch/piscina_fundo.jpg',
-      width: 960,
-      height: 540
-    },
-    {
-      src: '/uploads/backstretch/piscina_fundo_kids_medium.jpg',
-      width: 1024,
-      height: 576
-    },
-    {
-      src: '/uploads/backstretch/show_medium.jpg',
+    medium: {
+      src: 'show_medium.jpg',
       width: 1024,
       height: 614
     },
-    {
-      src: '/uploads/backstretch/overview.jpg',
-      width: 960,
-      height: 637
-    }
-  ],
-  small: [
-    {
-      src: '/uploads/backstretch/elefante_small.jpg',
-      width: 640,
-      height: 420
-    },
-    {
-      src: '/uploads/backstretch/piscina_fundo_small.jpg',
-      width: 640,
-      height: 360
-    },
-    {
-      src: '/uploads/backstretch/piscina_fundo_kids_small.jpg',
-      width: 640,
-      height: 488
-    },
-    {
-      src: '/uploads/backstretch/show_small.jpg',
+    small: {
+      src: 'show_small.jpg',
       width: 1600,
       height: 960
+    }
+  }/*,
+  // overview (old aerial)
+  {
+    large: {
+      src: 'overview.jpg',
+      width: 960,
+      height: 637
     },
-    {
-      src: '/uploads/backstretch/overview_small.jpg',
+    medium: {
+      src: 'overview.jpg',
+      width: 960,
+      height: 637
+    },
+    small: {
+      src: 'overview_small.jpg',
       width: 640,
       height: 425
     }
-  ]
-};
+  }*/]);
+
+  console.log(backstretchImageSets);
 
 require(['jquery',
          'react',
