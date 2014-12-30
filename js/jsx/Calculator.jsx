@@ -22,8 +22,8 @@
 define(['react', 'jsx!jsx/Row'], function(React, Row) {
   var Field = React.createClass({
     fieldProps: {
-      kids: {label: "Crianças", tabIndex: 1, help: "Menores de 12 anos", price: 8},
-      adults: {label: "Adolescentes e Adultos", tabIndex: 2, help: "De 12 a 59 anos", price: 15},
+      kids: {label: "Crianças", tabIndex: 1, help: "de 5 a 11 anos", price: 8},
+      adults: {label: "Adolescentes e Adultos", tabIndex: 2, help: "de 12 a 59 anos", price: 15},
       olds: {label: "Idosos", tabIndex: 3, help: "60 anos ou mais", price: 8}
     },
 
@@ -61,7 +61,7 @@ define(['react', 'jsx!jsx/Row'], function(React, Row) {
         <form>
           <Row>
             <div className="small-12 column">
-              <label className="control-label" htmlFor={name}>{data.label}</label>
+            <label className="control-label" htmlFor={name}>{data.label} ({data.help})</label>
             </div>
             <Row className="collapse">
               <div className="small-8 column">
@@ -75,12 +75,6 @@ define(['react', 'jsx!jsx/Row'], function(React, Row) {
                 <a className="button postfix" onClick={decrement}>&minus;</a>
               </div>
             </Row>
-          </Row>
-
-          <Row>
-            <div className="small-12 column">
-              <p className="help-block">{data.help}{subTotal}</p>
-            </div>
           </Row>
         </form>
       );
