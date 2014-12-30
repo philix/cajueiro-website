@@ -65,6 +65,32 @@ var backstretchImageSets = buildImageSets([
       height: 862
     }
   },
+  // piscina_frente
+  {
+    large: { // same as medium
+      src: 'piscina_frente_medium.jpg',
+      width: 960,
+      height: 539
+    },
+    medium: {
+      src: 'piscina_frente_medium.jpg',
+      width: 960,
+      height: 539
+    }
+  },
+  // toboagua
+  {
+    large: { // same as medium
+      src: 'toboagua_medium.jpg',
+      width: 960,
+      height: 539
+    },
+    medium: {
+      src: 'toboagua_medium.jpg',
+      width: 960,
+      height: 539
+    }
+  },
   // elefante
   {
     large: {
