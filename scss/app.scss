@@ -197,11 +197,14 @@ h1 > a {
   background-color: $calculator-bg-color;
   margin: 10px;
 }
-#calculator-total, #calculator-total-label {
-  font-family: $font-family-serif;
-  font-size: 1.4em;
+#calculator-total-row {
+  text-align: center;
 }
 #calculator-total {
+  font-family: $header-font-family;
+  font-size: 3em;
   font-style: italic;
+  color: $balneario-red;
+  line-height: 85%;
 }
 // }}}5

@@ -95,6 +95,7 @@ define(['react', 'jsx!jsx/Row'], function(React, Row) {
       };
 
       var cost = (this.state.kids + this.state.olds) * 8 + this.state.adults * 15;
+      var costStr = (cost === 0) ? "R$ --" : "R$ " + cost;
 
       return (
         <div id="calculator">
@@ -103,9 +104,8 @@ define(['react', 'jsx!jsx/Row'], function(React, Row) {
               <Field name="kids" value={that.state.kids} onChange={onChange} />
               <Field name="adults" value={that.state.adults} onChange={onChange} />
               <Field name="olds" value={that.state.olds} onChange={onChange} />
-              <Row>
-                <div id="calculator-total-label" className="small-4 column">Total</div>
-                <div id="calculator-total" className="small-8 column">R$ {cost}</div>
+              <Row id="calculator-total-row">
+                <div id="calculator-total">{costStr}</div>
               </Row>
             </div>
           </div>
