@@ -70,7 +70,9 @@ define(['react'], function(React) {
     },
 
     componentDidMount: function() {
-      window.addEventListener("resize", this.updateDimensions);
+      // Mobile browsers resize the viewport when they hide the address bar and
+      // updating dimensions while that happened is really bad UX.
+      //window.addEventListener("resize", this.updateDimensions);
 
       this.preloadNextImage();
 
