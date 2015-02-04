@@ -12,7 +12,7 @@ build:
 	node js/jsx-requirejs-plugin/r.js -o build.js
 
 rsync-deploy:
-	rsync -av ~/code/balneario/ felipe@balneariocajueiro.com.br:/home/felipe/balneario
+	rsync -av ./ --exclude .git felipe@balneariocajueiro.com.br:/home/felipe/balneario
 
 deploy: build rsync-deploy
 
