@@ -69,7 +69,6 @@ define(['react'], function(React) {
 
     render: function() {
       var containerStyle = {
-        "min-height": "563px",
         "margin-bottom": "30px",
         "background-color": "#190C05",
         padding: "5px",
