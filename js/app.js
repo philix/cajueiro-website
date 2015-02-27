@@ -182,15 +182,14 @@ var backstretchImageSets = buildImageSets([
     }
   }*/]);
 
-  console.log(backstretchImageSets);
-
 require(['jquery',
          'react',
          'jsx!jsx/Calculator',
          'jsx!jsx/BackStretch',
          'jsx!jsx/Weather',
+         'jsx!jsx/Gallery',
          'libs/foundation/js/foundation'],
-        function($, React, Calculator, BackStretch, Weather) {
+        function($, React, Calculator, BackStretch, Weather, Gallery) {
 
   // Foundation JavaScript
   $(document).foundation();
@@ -220,5 +219,22 @@ require(['jquery',
       console.log(data);
       React.renderComponent(Weather({data: data}), weatherContainer);
     });
+  }
+
+  var galleryContainer = document.getElementById("js-gallery-container");
+  if (galleryContainer) {
+    var galleryBaseUrl =  "/uploads/galleries/carnaval2015/";
+    var images = [];
+    var thumbs = [];
+    for (var i = 1; i <= 71; i++) {
+      var img = i + ".jpg";
+      if (i < 10) {
+        img = "0" + img;
+      }
+      images.push(galleryBaseUrl + img);
+      thumbs.push(galleryBaseUrl + "thumbs/" + img);
+    }
+
+    React.renderComponent(Gallery({images: images, thumbs: thumbs}), galleryContainer);
   }
 });
