@@ -1,4 +1,10 @@
 define(['react'], function(React) {
+  var Loading = React.createClass({
+    render: function() {
+      return <div style={{visibility: "hidden"}} className="lb-loading" />;
+    }
+  });
+
   var ImageBox = React.createClass({
     getInitialState: function() {
       var len = this.props.images.length;
@@ -15,14 +21,26 @@ define(['react'], function(React) {
       preloader.src = this.props.images[i];
     },
 
+    _loadImageAndSetState: function(newState) {
+      this.refs.loading.getDOMNode().style.visibility = "visible";
+      var loader = new Image();
+      loader.src = this.props.images[newState.next];
+      that = this;
+      loader.onload = function() {
+        that.setState(newState);
+        that.refs.loading.getDOMNode().style.visibility = "hidden";
+      };
+    },
+
     goToPrevious: function(e) {
       var len = this.props.images.length;
       var current = this.state.current;
-      this.setState({
+      var newState = {
         previous: (current + len - 2) % len,
         current: (current + len - 1) % len,
         next: current,
-      });
+      };
+      this._loadImageAndSetState(newState);
       this._preload(this.state.previous);
       e.preventDefault();
     },
@@ -30,11 +48,12 @@ define(['react'], function(React) {
     goToNext: function(e) {
       var len = this.props.images.length;
       var current = this.state.current;
-      this.setState({
+      var newState = {
         previous: current,
         current: (current + 1) % len,
         next: (current + 2) % len
-      });
+      };
+      this._loadImageAndSetState(newState);
       this._preload(this.state.next);
       e.preventDefault();
     },
@@ -42,11 +61,12 @@ define(['react'], function(React) {
     select: function(imageUrl) {
       var len = this.props.images.length;
       var current = this.props.images.indexOf(imageUrl);
-      this.setState({
+      var newState = {
         previous: (current - 1) % len,
         current: current,
         next: (current + 1) % len
-      });
+      };
+      this._loadImageAndSetState(newState);
       this._preload(this.state.next);
     },
 
@@ -86,6 +106,7 @@ define(['react'], function(React) {
           <div className="lb-nav">
             <a className="lb-prev" href={previousUrl} onClick={this.goToPrevious}/>
             <a className="lb-next" href={nextUrl} onClick={this.goToNext}/>
+            <Loading ref="loading" />
           </div>
           <img src={currentUrl} />
         </div>
