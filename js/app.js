@@ -9,11 +9,8 @@ require.config({
   },
 
   shim: {
-    "libs/modernizr/modernizr": {
-      exports: 'Modernizr',
-    },
     "libs/foundation/js/foundation": {
-      deps: ['jquery', 'libs/modernizr/modernizr']
+      deps: ['jquery']
     }
   },
 
