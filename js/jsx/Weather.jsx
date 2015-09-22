@@ -68,7 +68,7 @@ define(['react', 'jsx!jsx/Row'], function(React, Row) {
         <div className="weather-wrap">
           <div className="weather-cover">
             <div className="weather-darken">
-              <div className="weather-header">Balneário Cajueiro</div>
+              <div className="weather-header">Cajueiro Park</div>
 
               <Row>
                 <div className="small-4 column">
