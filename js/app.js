@@ -63,104 +63,104 @@ var backstretchImageSets = buildImageSets([
     }
   },
   // piscina_frente
-  {
-    large: { // same as medium
-      src: 'piscina_frente_medium.jpg',
-      width: 960,
-      height: 539
-    },
-    medium: {
-      src: 'piscina_frente_medium.jpg',
-      width: 960,
-      height: 539
-    }
-  },
+  // {
+  //   large: { // same as medium
+  //     src: 'piscina_frente_medium.jpg',
+  //     width: 960,
+  //     height: 539
+  //   },
+  //   medium: {
+  //     src: 'piscina_frente_medium.jpg',
+  //     width: 960,
+  //     height: 539
+  //   }
+  // },
   // toboagua
-  {
-    large: { // same as medium
-      src: 'toboagua_medium.jpg',
-      width: 960,
-      height: 539
-    },
-    medium: {
-      src: 'toboagua_medium.jpg',
-      width: 960,
-      height: 539
-    }
-  },
+  // {
+  //   large: { // same as medium
+  //     src: 'toboagua_medium.jpg',
+  //     width: 960,
+  //     height: 539
+  //   },
+  //   medium: {
+  //     src: 'toboagua_medium.jpg',
+  //     width: 960,
+  //     height: 539
+  //   }
+  // },
   // elefante
-  {
-    large: {
-      src: 'elefante_large.jpg',
-      width: 1600,
-      height: 900
-    },
-    medium: {
-      src: 'elefante_medium.jpg',
-      width: 1024,
-      height: 576
-    },
-    small: {
-      src: 'elefante_small.jpg',
-      width: 640,
-      height: 420
-    }
-  },
+  // {
+  //   large: {
+  //     src: 'elefante_large.jpg',
+  //     width: 1600,
+  //     height: 900
+  //   },
+  //   medium: {
+  //     src: 'elefante_medium.jpg',
+  //     width: 1024,
+  //     height: 576
+  //   },
+  //   small: {
+  //     src: 'elefante_small.jpg',
+  //     width: 640,
+  //     height: 420
+  //   }
+  // },
   // piscina_fundo
-  {
-    large: {
-      src: 'piscina_fundo.jpg',
-      width: 960,
-      height: 540
-    },
-    medium: {
-      src: 'piscina_fundo.jpg',
-      width: 960,
-      height: 540
-    },
-    small: {
-      src: 'piscina_fundo_small.jpg',
-      width: 640,
-      height: 360
-    }
-  },
+  // {
+  //   large: {
+  //     src: 'piscina_fundo.jpg',
+  //     width: 960,
+  //     height: 540
+  //   },
+  //   medium: {
+  //     src: 'piscina_fundo.jpg',
+  //     width: 960,
+  //     height: 540
+  //   },
+  //   small: {
+  //     src: 'piscina_fundo_small.jpg',
+  //     width: 640,
+  //     height: 360
+  //   }
+  // },
   // piscina_fundo_kids
-  {
-    large: {
-      src: 'piscina_fundo_kids_large.jpg',
-      width: 1600,
-      height: 900
-    },
-    medium: {
-      src: 'piscina_fundo_kids_medium.jpg',
-      width: 1024,
-      height: 576
-    },
-    small: {
-      src: 'piscina_fundo_kids_small.jpg',
-      width: 640,
-      height: 488
-    }
-  },
+  // {
+  //   large: {
+  //     src: 'piscina_fundo_kids_large.jpg',
+  //     width: 1600,
+  //     height: 900
+  //   },
+  //   medium: {
+  //     src: 'piscina_fundo_kids_medium.jpg',
+  //     width: 1024,
+  //     height: 576
+  //   },
+  //   small: {
+  //     src: 'piscina_fundo_kids_small.jpg',
+  //     width: 640,
+  //     height: 488
+  //   }
+  // },
   // show
-  {
-    large: {
-      src: 'show_large.jpg',
-      width: 1600,
-      height: 960
-    },
-    medium: {
-      src: 'show_medium.jpg',
-      width: 1024,
-      height: 614
-    },
-    small: {
-      src: 'show_small.jpg',
-      width: 1600,
-      height: 960
-    }
-  }/*,
-  // overview (old aerial)
+  // {
+  //   large: {
+  //     src: 'show_large.jpg',
+  //     width: 1600,
+  //     height: 960
+  //   },
+  //   medium: {
+  //     src: 'show_medium.jpg',
+  //     width: 1024,
+  //     height: 614
+  //   },
+  //   small: {
+  //     src: 'show_small.jpg',
+  //     width: 1600,
+  //     height: 960
+  //   }
+  /*}/*,
+  overview (old aerial)
   {
     large: {
       src: 'overview.jpg',
