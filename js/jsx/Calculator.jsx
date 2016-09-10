@@ -22,9 +22,9 @@
 define(['react', 'jsx!jsx/Row'], function(React, Row) {
   var Field = React.createClass({
     fieldProps: {
-      kids: {label: "Crianças", tabIndex: 1, help: "de 5 a 11 anos", price: 8},
-      adults: {label: "Adolescentes e Adultos", tabIndex: 2, help: "de 12 a 59 anos", price: 15},
-      olds: {label: "Idosos", tabIndex: 3, help: "60 anos ou mais", price: 8}
+      kids: {label: "Crianças", tabIndex: 1, help: "de 5 a 11 anos", price: 10},
+      adults: {label: "Adolescentes e Adultos", tabIndex: 2, help: "de 12 a 59 anos", price: 20},
+      olds: {label: "Idosos", tabIndex: 3, help: "60 anos ou mais", price: 10}
     },
 
     render: function() {
@@ -94,7 +94,7 @@ define(['react', 'jsx!jsx/Row'], function(React, Row) {
         that.setState(newState);
       };
 
-      var cost = (this.state.kids + this.state.olds) * 8 + this.state.adults * 15;
+      var cost = (this.state.kids + this.state.olds) * 10 + this.state.adults * 20;
       var costStr = (cost === 0) ? "R$ --" : "R$ " + cost;
 
       return (
